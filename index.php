@@ -19,23 +19,29 @@ class Movie
   public $year;
   public $cast;
   public $genre;
+  public $id;
 
   // definizione del costruttore:
-  public function __construct($_name, $_year,  $_cast,  $_genre)
+  public function __construct($_name, $_year,  $_cast,  $_genre, $_id)
   {
     $this->name = $_name;
     $this->year = $_year;
     $this->cast = $_cast;
     $this->genre = $_genre;
+    $this->id = $_id;
   }
 
   // metodo: 
 
+  public function get_id()
+    {
+        return $this->id;
+    }
 
 }
 
-$movie_1 = new Movie('Dune', '2021' ,'Timothée Chalamet, Rebecca Ferguson, Oscar Isaac, Josh Brolin', 'Fantascientifico');
-$movie_2 = new Movie('The Ring', '2002' ,'Naomi Watts, Martin Henderson, David Dorfman, Brian Cox, Daveigh Chase', 'Horror');
+$movie_1 = new Movie('Dune', '2021' ,'Timothée Chalamet, Rebecca Ferguson, Oscar Isaac, Josh Brolin', 'Fantascientifico', '23');
+$movie_2 = new Movie('The Ring', '2002' ,'Naomi Watts, Martin Henderson, David Dorfman, Brian Cox, Daveigh Chase', 'Horror', '34');
 
 ?>
 
@@ -55,6 +61,7 @@ $movie_2 = new Movie('The Ring', '2002' ,'Naomi Watts, Martin Henderson, David D
         <p>Anno d'uscita: <?= $movie_1->year ?></p>
         <p>Cast principale: <?= $movie_1->cast ?></p>
         <p>Genere: <?= $movie_1->genre ?></p>
+        <p>Id: <?=$movie_1->get_id()?></p>
     </div>
 
     <div class="movie-container">
@@ -62,6 +69,7 @@ $movie_2 = new Movie('The Ring', '2002' ,'Naomi Watts, Martin Henderson, David D
         <p>Anno d'uscita: <?= $movie_2->year ?></p>
         <p>Cast principale: <?= $movie_2->cast ?></p>
         <p>Genere: <?= $movie_2->genre ?></p>
+        <p>Id: <?=$movie_2->get_id()?></p>
     </div>
 </body>
 </html>
